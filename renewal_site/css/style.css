@@ -1,0 +1,111 @@
+/* font */
+@font-face{font-family: Cako; src: url(../font/Cako-Regular.woff2);}
+@font-face{font-family: Beatrice; src: url(../font/Beatrice-SemiBold.woff2);}
+
+body{font-family: Cako; font-size: 16px;}
+
+.container{padding: 0 1.25rem;}
+
+/* sec1 */
+.sec1{
+    position: relative;
+    height: 100vh;
+    background-color: #3A4638;
+    color: #fff;
+    padding-top: 1.75rem;
+}
+.sec1 ul{
+    text-transform: uppercase; 
+    font-size: 1.75rem;
+    display: flex; justify-content: space-between
+}
+
+.sec1 .mouth{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex; justify-content: center; align-items: center;
+}
+.sec1 .mouth img{}
+
+.sec1 .mucha{
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    
+}
+.sec1 .mucha p{
+    box-sizing: border-box;
+    font-size: 150px;
+    white-space: nowrap;
+    animation: txtAni 10s linear infinite;
+}
+@keyframes txtAni{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-100%);}
+}
+
+/* sec2 */
+.sec2{background-color: #E29473;}
+.sec2 header{
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: Beatrice;
+    padding: 1.25rem 2.5rem 0;
+}
+.sec2 .box .box_menu{display: flex; align-items: center; gap: 1.25rem;}
+.sec2 .bar{}
+.sec2 .bar span{
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    margin-top: 5px;
+}
+.sec2 .box:hover .bar span:nth-child(2){
+    animation: bar 0.3s linear;
+}
+@keyframes bar{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(180deg);}
+}
+.sec2 .bar span:last-child{margin-bottom: 5px;}
+
+.sec2 .mucha_logo{
+    font-family: Cako;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.sec2 .menu_Ani{
+    position: relative;
+}
+.sec2 .menu_Ani::after{
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 0;
+    transition: 0.3s;
+}
+.sec2 .box:hover .menu_Ani::after{
+    width: 50px; height: 2px;
+    background-color: #000;
+}
+
+.sec2 .menu_Ani2{
+    position: relative;
+}
+.sec2 .menu_Ani2::after{
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 0;
+    transition: 0.3s;
+}
+.sec2 .box2:hover .menu_Ani2::after{
+    width: 89px; height: 2px;
+    background-color: #000;
+}
+
+.sec2 path.mouth-spot{
+    color: #E7BEAF;
+}
