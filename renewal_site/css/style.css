@@ -3,9 +3,70 @@
 @font-face{font-family: Beatrice; src: url(../font/Beatrice-SemiBold.woff2);}
 @font-face{font-family: Cako-Black; src: url(../font/Cako-Black.woff);}
 
-body{font-family: Cako; font-size: 16px;}
+body{font-family: Cako; font-size: 16px; background-color: #E29473;}
 
 .container{padding: 0 1.25rem;}
+
+/* header */
+header{
+    position: fixed; top: 0; left: 0;
+    width: 100vw;
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: Beatrice;
+    padding: 1.25rem 2.5rem 0;
+    z-index: 100;
+    display: none;
+}
+header .box .box_menu{display: flex; align-items: center; gap: 1.25rem;}
+header .bar span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin-top: 5px;
+}
+header .box:hover .bar span:nth-child(2){
+    animation: bar 0.3s linear;
+}
+@keyframes bar{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(180deg);}
+}
+header .bar span:last-child{margin-bottom: 5px;}
+
+header .mucha_logo{
+    font-weight: normal;
+    font-family: Cako;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+header .menu_Ani{
+    position: relative;
+}
+header .menu_Ani::after{
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 0;
+    transition: 0.4s;
+}
+header .box:hover .menu_Ani::after{
+    width: 75px; height: 3px;
+    background-color: #000;
+}
+
+header .menu_Ani2{
+    position: relative;
+}
+header .menu_Ani2::after{
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 0;
+    transition: 0.4s;
+}
+header .box2:hover .menu_Ani2::after{
+    width: 135px; height: 3px;
+    background-color: #000;
+}
 
 /* sec1 */
 .sec1{
@@ -14,7 +75,7 @@ body{font-family: Cako; font-size: 16px;}
     background-color: #3A4638;
     color: #fff;
     padding-top: 1.75rem;
-    /* overflow: clip; */
+    overflow: clip;
 }
 .sec1 ul{
     text-transform: uppercase; 
@@ -53,62 +114,83 @@ body{font-family: Cako; font-size: 16px;}
 }
 
 /* sec2 */
-.sec2{background-color: #E29473; height: 100vh; font-size: 1.5rem;}
-.sec2 header{
-    display: flex; align-items: center; justify-content: space-between;
-    font-family: Beatrice;
-    padding: 1.25rem 2.5rem 0;
-}
-.sec2 .box .box_menu{display: flex; align-items: center; gap: 1.25rem;}
-.sec2 .bar{}
-.sec2 .bar span{
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-    margin-top: 5px;
-}
-.sec2 .box:hover .bar span:nth-child(2){
-    animation: bar 0.3s linear;
-}
-@keyframes bar{
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(180deg);}
-}
-.sec2 .bar span:last-child{margin-bottom: 5px;}
-
-.sec2 .mucha_logo{
-    font-weight: normal;
-    font-family: Cako;
-    font-weight: bolder;
-    font-size: 3rem;
-}
-.sec2 .menu_Ani{
+.sec2{
     position: relative;
-}
-.sec2 .menu_Ani::after{
-    content: "";
-    position: absolute; left: 0; bottom: 0;
-    width: 0;
-    transition: 0.4s;
-}
-.sec2 .box:hover .menu_Ani::after{
-    width: 75px; height: 3px;
-    background-color: #000;
+    transform: none;
+    background-color: #E29473; 
+    height: 100vh; 
+    font-size: 1.5rem;
 }
 
-.sec2 .menu_Ani2{
+.sec2 .mouth{
+    position: absolute;
+    top: 0; left: 0;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+.sec2 .box_ani{
+    /* display: none; */
+    position: absolute;
+    top: 90px; left: 50%;
+    transform: translateX(-50%);
+}
+.sec2 .box_ani .line{
+    width: 5px;
+    height: 100px;
+    background-color: #3A4638;
+    transform: rotate(360deg);
+}
+.sec2 .box_ani .circle{
+    position: absolute; top:80px; left: -12px;
+    background-color: #3A4638;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+}
+.sec2 .box_ani .dot_box span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #3A4638;
+    transform: rotate(50deg);
+}
+.sec2 .box_ani .dot_box .left{
+    position: absolute;
+    top: 85px; left: -144px;
+}
+.sec2 .box_ani .dot_box .right{
+    position: absolute;
+    top: 85px; right: -144px;
+}
+
+/* sec3 */
+.sec3{
     position: relative;
+    background-color: #3A4638;
+    height: 100vh;
+    z-index: 50;
 }
-.sec2 .menu_Ani2::after{
-    content: "";
-    position: absolute; left: 0; bottom: 0;
-    width: 0;
-    transition: 0.4s;
+.sec3 .sebebe{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 60;
 }
-.sec2 .box2:hover .menu_Ani2::after{
-    width: 135px; height: 3px;
-    background-color: #000;
+.sec3 .window{ 
+    width: 500px;
+    height: 600px;
+    position: relative;
+    /* clip-path: polygon(26% 100%, 74% 100%, 74% 39%, 73% 31%, 71% 24%, 68% 18%, 62% 11%, 58% 7%, 50% 4%, 42% 7%, 37% 12%, 32% 18%, 29% 25%, 27% 33%, 26% 40%); */
+    
 }
-.mouth svg{width: 500px;}
+.sec3 .clippath_img{
+    width: 100%;
+    height: 100%;
+    clip-path: url(#clipPath);
+    background: url(../img/Se_Bebe_Cover@2x-scaled.jpg) no-repeat center center;
+    background-size: cover;
+    z-index: 100;
+}
+
+/* sec4 */
+.sec4{height: 100vh; background-color: #E29473;}
 
